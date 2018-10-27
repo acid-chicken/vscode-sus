@@ -1,0 +1,31 @@
+{
+  "name": "vscode-sus",
+  "displayName": "vscode-sus",
+  "description": "",
+  "version": "1.0.0",
+  "publisher": "acid-chicken",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/acid-chicken/vscode-sus.git"
+  },
+  "engines": {
+    "vscode": "^1.28.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "sus",
+      "aliases": ["Sus", "sus"],
+      "extensions": [".sus"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "sus",
+      "scopeName": "source.sus",
+      "path": "./syntaxes/sus.tmLanguage.json"
+    }]
+  }
+}

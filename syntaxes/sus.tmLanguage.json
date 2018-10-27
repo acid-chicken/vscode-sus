@@ -1,0 +1,1077 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Sus",
+  "patterns": [
+    {
+      "match": "^(#)(\\w*(\\s.*)?)$",
+      "captures": {
+        "1": {
+          "name": "keyword.control.sus"
+        },
+        "2": {
+          "patterns": [
+            {
+              "match": "(?<=#)([Tt][Ii][Tt][Ll][Ee])\\s(.*)",
+              "captures": {
+                "1": {
+                  "name": "keyword.control.sus.title"
+                },
+                "2": {
+                  "patterns": [
+                    {
+                      "include": "#strings"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "match": "(?<=#)([Aa][Rr][Tt][Ii][Ss][Tt])\\s(.*)",
+              "captures": {
+                "1": {
+                  "name": "keyword.control.sus.artist"
+                },
+                "2": {
+                  "patterns": [
+                    {
+                      "include": "#strings"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "match": "(?<=#)([Dd][Ee][Ss][Ii][Gg][Nn][Ee][Rr])\\s(.*)",
+              "captures": {
+                "1": {
+                  "name": "keyword.control.sus.designer"
+                },
+                "2": {
+                  "patterns": [
+                    {
+                      "include": "#strings"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "match": "(?<=#)([Dd][Ii][Ff]{2}[Ii][Cc][Uu][Ll][Tt][Yy])\\s(.*)",
+              "captures": {
+                "1": {
+                  "name": "keyword.control.sus.difficulty"
+                },
+                "2": {
+                  "patterns": [
+                    {
+                      "name": "constant.numeric",
+                      "match": "[0-4](?=$)"
+                    },
+                    {
+                      "include": "#strings"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "match": "(?<=#)([Pp][Ll][Aa][Yy][Ll][Ee][Vv][Ee][Ll])\\s(.*)",
+              "captures": {
+                "1": {
+                  "name": "keyword.control.sus.playlevel"
+                },
+                "2": {
+                  "patterns": [
+                    {
+                      "name": "constant.numeric",
+                      "match": "\\d+\\+?(?=$)"
+                    },
+                    {
+                      "name": "invalid.illegal.sus.numeric",
+                      "match": ".*"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "match": "(?<=#)([Ss][Oo][Nn][Gg][Ii][Dd])\\s(.*)",
+              "captures": {
+                "1": {
+                  "name": "keyword.control.sus.songid"
+                },
+                "2": {
+                  "patterns": [
+                    {
+                      "include": "#strings"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "match": "(?<=#)([Ww][Aa][Vv][Ee])\\s(.*)",
+              "captures": {
+                "1": {
+                  "name": "keyword.control.sus.wave"
+                },
+                "2": {
+                  "patterns": [
+                    {
+                      "include": "#strings"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "match": "(?<=#)([Ww][Aa][Vv][Ee][Oo][Ff]{2}[Ss][Ee][Tt])\\s(.*)",
+              "captures": {
+                "1": {
+                  "name": "keyword.control.sus.waveoffset"
+                },
+                "2": {
+                  "patterns": [
+                    {
+                      "include": "#numerics-only"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "match": "(?<=#)([Jj][Aa][Cc][Kk][Ee][Tt])\\s(.*)",
+              "captures": {
+                "1": {
+                  "name": "keyword.control.sus.jacket"
+                },
+                "2": {
+                  "patterns": [
+                    {
+                      "include": "#strings"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "match": "(?<=#)([Bb][Aa][Cc][Kk][Gg][Rr][Oo][Uu][Nn][Dd])\\s(.*)",
+              "captures": {
+                "1": {
+                  "name": "keyword.control.sus.background"
+                },
+                "2": {
+                  "patterns": [
+                    {
+                      "include": "#strings"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "match": "(?<=#)([Mm][Oo][Vv][Ii][Ee])\\s(.*)",
+              "captures": {
+                "1": {
+                  "name": "keyword.control.sus.movie"
+                },
+                "2": {
+                  "patterns": [
+                    {
+                      "include": "#strings"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "match": "(?<=#)([Mm][Oo][Vv][Ii][Ee][Oo][Ff]{2}[Ss][Ee][Tt])\\s(.*)",
+              "captures": {
+                "1": {
+                  "name": "keyword.control.sus.moiveoffset"
+                },
+                "2": {
+                  "patterns": [
+                    {
+                      "include": "#numerics-only"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "match": "(?<=#)([Bb][Aa][Ss][Ee][Bb][Pp][Mm])\\s(.*)",
+              "captures": {
+                "1": {
+                  "name": "keyword.control.sus.basebpm"
+                },
+                "2": {
+                  "patterns": [
+                    {
+                      "include": "#numerics-only"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "match": "(?<=#)([Rr][Ee][Qq][Uu][Ee][Ss][Tt])\\s(.*)",
+              "captures": {
+                "1": {
+                  "name": "keyword.control.sus.request"
+                },
+                "2": {
+                  "patterns": [
+                    {
+                      "include": "#strings"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "match": "(?<=#)([Hh][Ii][Ss][Pp][Ee]{2}[Dd])\\s(.*)",
+              "captures": {
+                "1": {
+                  "name": "keyword.control.sus.hispeed"
+                },
+                "2": {
+                  "patterns": [
+                    {
+                      "name": "markup.italic.sus.hispeed",
+                      "match": "\\w{2}"
+                    },
+                    {
+                      "name": "invalid.illegal.sus.hispeed",
+                      "match": ".*"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "keyword.control.sus.nospeed",
+              "match": "(?<=#)[Nn][Oo][Ss][Pp][Ee]{2}[Dd]"
+            },
+            {
+              "match": "(?<=#)([Mm][Ee][Aa][Ss][Uu][Rr][Ee][Hh][Ss])\\s(.*)",
+              "captures": {
+                "1": {
+                  "name": "keyword.control.sus.measurehs"
+                },
+                "2": {
+                  "patterns": [
+                    {
+                      "name": "markup.italic.sus.measurehs",
+                      "match": "\\w{2}"
+                    },
+                    {
+                      "name": "invalid.illegal.sus.measurehs",
+                      "match": ".*"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "match": "(?<=#)([Mm][Ee][Aa][Ss][Uu][Rr][Ee][Bb][Ss])\\s(.*)",
+              "captures": {
+                "1": {
+                  "name": "keyword.control.sus.measurehs"
+                },
+                "2": {
+                  "patterns": [
+                    {
+                      "name": "markup.italic.sus.measurehs",
+                      "match": "\\d+"
+                    },
+                    {
+                      "name": "invalid.illegal.sus.measurehs",
+                      "match": ".*"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "match": "(?<=#)([Aa][Tt]{2}[Rr][Ii][Bb][Uu][Tt][Ee])\\s(.*)",
+              "captures": {
+                "1": {
+                  "name": "keyword.control.sus.attribute"
+                },
+                "2": {
+                  "patterns": [
+                    {
+                      "name": "markup.italic.sus.attribute",
+                      "match": "\\w{2}"
+                    },
+                    {
+                      "name": "invalid.illegal.sus.attribute",
+                      "match": ".*"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "keyword.control.sus.nospeed",
+              "match": "(?<=#)[Nn][Oo][Aa][Tt]{2}[Rr][Ii][Bb][Uu][Tt][Ee]"
+            },
+            {
+              "match": "(?<=#)(\\w+)(\\s.*)?$",
+              "captures": {
+                "1": {
+                  "name": "keyword.control.sus.unknown"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "markup.sus.data",
+      "match": "^#\\w*:.*$",
+      "captures": {
+        "0": {
+          "patterns": [
+            {
+              "begin": "^#\\d{3}",
+              "beginCaptures": {
+                "0": {
+                  "name": "markup.heading.sus.data.bar"
+                }
+              },
+              "end": "$",
+              "patterns": [
+                {
+                  "name": "markup.sus.data.lane.short",
+                  "match": "(1[\\dA-Fa-f])(:)(.*)",
+                  "captures": {
+                    "1": {
+                      "name": "constant.numeric.sus.lane"
+                    },
+                    "2": {
+                      "name": "keyword.operator.sus.colon"
+                    },
+                    "3": {
+                      "patterns": [
+                        {
+                          "name": "markup.sus.data.notes.short.none",
+                          "match": "\\w0"
+                        },
+                        {
+                          "name": "markup.bold.sus.data.notes.short.tap",
+                          "match": "1[1-9A-Ga-g]"
+                        },
+                        {
+                          "name": "markup.bold.sus.data.notes.short.tap.ex",
+                          "match": "2[1-9A-Ga-g]"
+                        },
+                        {
+                          "name": "markup.bold.sus.data.notes.short.flick",
+                          "match": "3[1-9A-Ga-g]"
+                        },
+                        {
+                          "name": "markup.bold.sus.data.notes.short.tap.hell",
+                          "match": "4[1-9A-Ga-g]"
+                        },
+                        {
+                          "name": "markup.bold.sus.data.notes.short.tap.ex.awesome.up",
+                          "match": "5[1-9A-Ga-g]"
+                        },
+                        {
+                          "name": "markup.bold.sus.data.notes.short.tap.ex.awesome.down",
+                          "match": "6[1-9A-Ga-g]"
+                        },
+                        {
+                          "name": "markup.bold.sus.data.notes.short.unknown",
+                          "match": "\\w{2}"
+                        },
+                        {
+                          "name": "invalid.illegal.sus.data.notes.short",
+                          "match": "\\S"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "name": "markup.sus.data.lane.long.hold",
+                  "match": "(2[\\dA-Fa-f])(\\w)(:)(.*)",
+                  "captures": {
+                    "1": {
+                      "name": "constant.numeric.sus.lane"
+                    },
+                    "2": {
+                      "name": "constant.numeric.sus.lane.long"
+                    },
+                    "3": {
+                      "name": "keyword.operator.sus.colon"
+                    },
+                    "4": {
+                      "patterns": [
+                        {
+                          "name": "markup.sus.data.notes.long.hold.none",
+                          "match": "\\w0"
+                        },
+                        {
+                          "name": "markup.bold.sus.data.notes.long.hold.start",
+                          "match": "1[1-9A-Ga-g]"
+                        },
+                        {
+                          "name": "markup.bold.sus.data.notes.long.hold.end",
+                          "match": "2[1-9A-Ga-g]"
+                        },
+                        {
+                          "name": "markup.bold.sus.data.notes.long.hold.step",
+                          "match": "3[1-9A-Ga-g]"
+                        },
+                        {
+                          "name": "markup.bold.sus.data.notes.long.hold.control",
+                          "match": "4[1-9A-Ga-g]"
+                        },
+                        {
+                          "name": "markup.bold.sus.data.notes.long.hold.invisivle",
+                          "match": "5[1-9A-Ga-g]"
+                        },
+                        {
+                          "name": "markup.bold.sus.data.notes.long.hold.unknown",
+                          "match": "\\w{2}"
+                        },
+                        {
+                          "name": "invalid.illegal.sus.data.notes.long.hold",
+                          "match": "\\S"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "name": "markup.sus.data.lane.long.slide",
+                  "match": "(3[\\dA-Fa-f])(\\w)(:)(.*)",
+                  "captures": {
+                    "1": {
+                      "name": "constant.numeric.sus.lane"
+                    },
+                    "2": {
+                      "name": "constant.numeric.sus.lane.long"
+                    },
+                    "3": {
+                      "name": "keyword.operator.sus.colon"
+                    },
+                    "4": {
+                      "patterns": [
+                        {
+                          "name": "markup.sus.data.notes.long.slide.none",
+                          "match": "\\w0"
+                        },
+                        {
+                          "name": "markup.bold.sus.data.notes.long.slide.start",
+                          "match": "1[1-9A-Ga-g]"
+                        },
+                        {
+                          "name": "markup.bold.sus.data.notes.long.slide.end",
+                          "match": "2[1-9A-Ga-g]"
+                        },
+                        {
+                          "name": "markup.bold.sus.data.notes.long.slide.step",
+                          "match": "3[1-9A-Ga-g]"
+                        },
+                        {
+                          "name": "markup.bold.sus.data.notes.long.slide.control",
+                          "match": "4[1-9A-Ga-g]"
+                        },
+                        {
+                          "name": "markup.bold.sus.data.notes.long.slide.invisivle",
+                          "match": "5[1-9A-Ga-g]"
+                        },
+                        {
+                          "name": "markup.bold.sus.data.notes.long.slide.unknown",
+                          "match": "\\w{2}"
+                        },
+                        {
+                          "name": "invalid.illegal.sus.data.notes.long.slide",
+                          "match": "\\S"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "name": "markup.sus.data.lane.long.air-action",
+                  "match": "(4[\\dA-Fa-f])(\\w)(:)(.*)",
+                  "captures": {
+                    "1": {
+                      "name": "constant.numeric.sus.lane"
+                    },
+                    "2": {
+                      "name": "constant.numeric.sus.lane.long"
+                    },
+                    "3": {
+                      "name": "keyword.operator.sus.colon"
+                    },
+                    "4": {
+                      "patterns": [
+                        {
+                          "name": "markup.sus.data.notes.long.air-action.none",
+                          "match": "\\w0"
+                        },
+                        {
+                          "name": "markup.bold.sus.data.notes.long.air-action.start",
+                          "match": "1[1-9A-Ga-g]"
+                        },
+                        {
+                          "name": "markup.bold.sus.data.notes.long.air-action.end",
+                          "match": "2[1-9A-Ga-g]"
+                        },
+                        {
+                          "name": "markup.bold.sus.data.notes.long.air-action.step",
+                          "match": "3[1-9A-Ga-g]"
+                        },
+                        {
+                          "name": "markup.bold.sus.data.notes.long.air-action.control",
+                          "match": "4[1-9A-Ga-g]"
+                        },
+                        {
+                          "name": "markup.bold.sus.data.notes.long.air-action.invisivle",
+                          "match": "5[1-9A-Ga-g]"
+                        },
+                        {
+                          "name": "markup.bold.sus.data.notes.long.air-action.unknown",
+                          "match": "\\w{2}"
+                        },
+                        {
+                          "name": "invalid.illegal.sus.data.notes.long.air-action",
+                          "match": "\\S"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "name": "markup.sus.data.lane.air",
+                  "match": "(5[\\dA-Fa-f])(:)(.*)",
+                  "captures": {
+                    "1": {
+                      "name": "constant.numeric.sus.lane"
+                    },
+                    "2": {
+                      "name": "keyword.operator.sus.colon"
+                    },
+                    "3": {
+                      "patterns": [
+                        {
+                          "name": "markup.sus.data.notes.air.none",
+                          "match": "\\w0"
+                        },
+                        {
+                          "name": "markup.bold.sus.data.notes.air.up",
+                          "match": "1[1-9A-Ga-g]"
+                        },
+                        {
+                          "name": "markup.bold.sus.data.notes.air.down",
+                          "match": "2[1-9A-Ga-g]"
+                        },
+                        {
+                          "name": "markup.bold.sus.data.notes.air.up.left",
+                          "match": "3[1-9A-Ga-g]"
+                        },
+                        {
+                          "name": "markup.bold.sus.data.notes.air.up.right",
+                          "match": "4[1-9A-Ga-g]"
+                        },
+                        {
+                          "name": "markup.bold.sus.data.notes.air.down.left",
+                          "match": "5[1-9A-Ga-g]"
+                        },
+                        {
+                          "name": "markup.bold.sus.data.notes.air.down.right",
+                          "match": "6[1-9A-Ga-g]"
+                        },
+                        {
+                          "name": "markup.bold.sus.data.notes.air.up.grounded",
+                          "match": "7[1-9A-Ga-g]"
+                        },
+                        {
+                          "name": "markup.bold.sus.data.notes.air.up.left.grounded",
+                          "match": "8[1-9A-Ga-g]"
+                        },
+                        {
+                          "name": "markup.bold.sus.data.notes.air.up.right.grounded",
+                          "match": "9[1-9A-Ga-g]"
+                        },
+                        {
+                          "name": "markup.bold.sus.data.notes.air.unknown",
+                          "match": "\\w{2}"
+                        },
+                        {
+                          "name": "invalid.illegal.sus.data.notes.air",
+                          "match": "\\S"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "name": "markup.sus.data.bpm",
+                  "match": "(08)(:)(.*)",
+                  "captures": {
+                    "1": {
+                      "name": "constant.numeric.sus.bpm"
+                    },
+                    "2": {
+                      "name": "keyword.operator.sus.colon"
+                    },
+                    "3": {
+                      "patterns": [
+                        {
+                          "name": "markup.italic.sus.data.bpm",
+                          "match": "\\w{2}"
+                        },
+                        {
+                          "name": "invalid.illegal.sus.data.bpm",
+                          "match": "\\S"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "name": "markup.sus.data.beats",
+                  "match": "(02)(:)(.*)",
+                  "captures": {
+                    "1": {
+                      "name": "constant.numeric.sus.beats"
+                    },
+                    "2": {
+                      "name": "keyword.operator.sus.beats"
+                    },
+                    "3": {
+                      "patterns": [
+                        {
+                          "include": "#numerics"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "name": "invalid.illegal.sus.data.bar",
+                  "match": ".*"
+                }
+              ]
+            },
+            {
+              "begin": "^#[Bb][Pp][Mm]",
+              "beginCaptures": {
+                "0": {
+                  "name": "markup.heading.sus.data.bpm"
+                }
+              },
+              "end": "$",
+              "patterns": [
+                {
+                  "name": "markup.sus.data.bpm",
+                  "match": "(\\d{2})(:)\\s*(.*)",
+                  "captures": {
+                    "1": {
+                      "name": "constant.numeric.sus.data.bpm"
+                    },
+                    "2": {
+                      "name": "keyword.operator.sus.colon"
+                    },
+                    "3": {
+                      "patterns": [
+                        {
+                          "include": "#numerics"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "name": "invalid.illegal.sus.data.bpm",
+                  "match": ".*"
+                }
+              ]
+            },
+            {
+              "begin": "^#[Tt][Ii][Ll]",
+              "beginCaptures": {
+                "0": {
+                  "name": "markup.heading.sus.data.til"
+                }
+              },
+              "end": "$",
+              "patterns": [
+                {
+                  "name": "markup.sus.data.til",
+                  "match": "(\\w{2})(:)(.*)",
+                  "captures": {
+                    "1": {
+                      "name": "constant.numeric.sus.data.til"
+                    },
+                    "2": {
+                      "name": "keyword.operator.sus.colon"
+                    },
+                    "3": {
+                      "patterns": [
+                        {
+                          "name": "markup.data.sus.til.quoted",
+                          "begin": "\"",
+                          "beginCaptures": {
+                            "0": {
+                              "name": "keyword.operator.sus.quotation"
+                            }
+                          },
+                          "end": "\"",
+                          "endCaptures": {
+                            "0": {
+                              "name": "keyword.operator.sus.quotation"
+                            }
+                          },
+                          "patterns": [
+                            {
+                              "include": "#tils"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "markup.data.sus.til.unquoted",
+                          "match": ".*",
+                          "captures": {
+                            "0": {
+                              "patterns": [
+                                {
+                                  "include": "#tils"
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "name": "invalid.illegal.sus.data.til",
+                  "match": ".*"
+                }
+              ]
+            },
+            {
+              "begin": "^#[Aa][Tt][Rr]",
+              "beginCaptures": {
+                "0": {
+                  "name": "markup.heading.sus.data.atr"
+                }
+              },
+              "end": "$",
+              "patterns": [
+                {
+                  "name": "markup.sus.data.atr",
+                  "match": "(\\w{2})(:)(.*)",
+                  "captures": {
+                    "1": {
+                      "name": "constant.numeric.sus.data.atr"
+                    },
+                    "2": {
+                      "name": "keyword.operator.sus.colon"
+                    },
+                    "3": {
+                      "patterns": [
+                        {
+                          "name": "markup.data.sus.atr.quoted",
+                          "begin": "\"",
+                          "beginCaptures": {
+                            "0": {
+                              "name": "keyword.operator.sus.quotation"
+                            }
+                          },
+                          "end": "\"",
+                          "endCaptures": {
+                            "0": {
+                              "name": "keyword.operator.sus.quotation"
+                            }
+                          },
+                          "patterns": [
+                            {
+                              "include": "#atrs"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "markup.data.sus.atr.unquoted",
+                          "match": ".*",
+                          "captures": {
+                            "0": {
+                              "patterns": [
+                                {
+                                  "include": "#atrs"
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "name": "invalid.illegal.sus.data.atr",
+                  "match": ".*"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "invalid.illegal.sus",
+      "match": "^(#)(\\w*[^\\s:].*)$"
+    },
+    {
+      "name": "comment.line",
+      "match": "^[^#].*$"
+    }
+  ],
+  "repository": {
+    "numerics": {
+      "patterns": [
+        {
+          "name": "constant.numeric.sus",
+          "match": "-?\\d+(\\.\\d+)?"
+        },
+        {
+          "name": "invalid.illegal.sus.numeric",
+          "match": ".*"
+        }
+      ]
+    },
+    "numerics-only": {
+      "patterns": [
+        {
+          "name": "constant.numeric.sus",
+          "match": "-?\\d+(\\.\\d+)?(?=$)"
+        },
+        {
+          "name": "invalid.illegal.sus.numeric",
+          "match": ".*"
+        }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "name": "string.quoted.double.sus",
+          "begin": "\"",
+          "end": "\""
+        },
+        {
+          "name": "string.unquoted.double.sus",
+          "match": ".*"
+        }
+      ]
+    },
+    "tils": {
+      "patterns": [
+        {
+          "name": "markup.sus.data.til",
+          "match": "(\\d+)(')(\\d+)((:[\\w]){1,2})",
+          "captures": {
+            "1": {
+              "name": "constant.numeric.sus.data.til.meas"
+            },
+            "2": {
+              "name": "keyword.operator.sus.apostrophe"
+            },
+            "3": {
+              "name": "constant.numeric.sus.data.til.tick"
+            },
+            "4": {
+              "patterns": [
+                {
+                  "name": "markup.sus.data.til.speed",
+                  "match": "(:)(-?\\d+(\\.\\d+)?)",
+                  "captures": {
+                    "1": {
+                      "name": "keyword.operator.sus.colon"
+                    },
+                    "2": {
+                      "name": "variable.parameter.sus.data.til.speed"
+                    }
+                  }
+                },
+                {
+                  "name": "markup.sus.data.til.visibility",
+                  "match": "(:)([vi]|(in)?visible)",
+                  "captures": {
+                    "1": {
+                      "name": "keyword.operator.sus.colon"
+                    },
+                    "2": {
+                      "patterns": [
+                        {
+                          "name": "constant.language.sus.data.til.visible",
+                          "match": "(?<!in)v(isible)?"
+                        },
+                        {
+                          "name": "constant.language.sus.data.til.invisible",
+                          "match": "i(nvisible)?"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "name": "markup.sus.data.til.unknown",
+                  "match": "(:)([^\\s,]*)",
+                  "captures": {
+                    "1": {
+                      "name": "keyword.operator.sus.colon"
+                    },
+                    "2": {
+                      "name": "invalid.illegal.sus.data.til"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "markup.sus.data.til.inherit",
+          "match": "(inherit)(:)(\\w{2})",
+          "captures": {
+            "1": {
+              "name": "constant.language.sus.data.til.inherit"
+            },
+            "2": {
+              "name": "keyword.operator.sus.colon"
+            },
+            "3": {
+              "name": "markup.italic.sus.data.til.inherit"
+            }
+          }
+        },
+        {
+          "name": "keyword.operator.sus.comma",
+          "match": ","
+        },
+        {
+          "name": "invalid.illegal.sus.data.til",
+          "match": "\\S"
+        }
+      ]
+    },
+    "atrs": {
+      "patterns": [
+        {
+          "name": "markup.sus.data.atr",
+          "match": "\\w+:\\S*",
+          "captures": {
+            "0": {
+              "patterns": [
+                {
+                  "name": "markup.sus.data.atr.priority",
+                  "match": "(pr(iority)?)(:)([^\\s,]*)",
+                  "captures": {
+                    "1": {
+                      "name": "constant.language.sus.data.atr.priority"
+                    },
+                    "2": {
+                      "name": "keyword.operator.sus.colon"
+                    },
+                    "3": {
+                      "patterns": [
+                        {
+                          "name": "variable.parameter.sus.data.atr.priority",
+                          "match": "\\d+"
+                        },
+                        {
+                          "name": "invalid.illegal.sus.data.atr.priority",
+                          "match": ".*"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "name": "markup.sus.data.atr.height",
+                  "match": "(h(eight)?)(:)([^\\s,]*)",
+                  "captures": {
+                    "1": {
+                      "name": "constant.language.sus.data.atr.height"
+                    },
+                    "2": {
+                      "name": "keyword.operator.sus.colon"
+                    },
+                    "3": {
+                      "patterns": [
+                        {
+                          "name": "variable.parameter.sus.data.atr.height",
+                          "match": "-?\\d+(\\.\\d+)?"
+                        },
+                        {
+                          "name": "invalid.illegal.sus.data.atr.height",
+                          "match": ".*"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "name": "markup.sus.data.atr.rollhs",
+                  "match": "(rh|rollhs)(:)([^\\s,]*)",
+                  "captures": {
+                    "1": {
+                      "name": "constant.language.sus.data.atr.rollhs"
+                    },
+                    "2": {
+                      "name": "keyword.operator.sus.colon"
+                    },
+                    "3": {
+                      "patterns": [
+                        {
+                          "name": "markup.italic.sus.data.atr.rollhs",
+                          "match": "\\w{2}"
+                        },
+                        {
+                          "name": "invalid.illegal.sus.data.atr.rollhs",
+                          "match": ".*"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "name": "markup.sus.data.atr.unknown",
+                  "match": "([^\\s,]+)(:)[^\\s,]*",
+                  "captures": {
+                    "1": {
+                      "name": "invalid.illegal.sus.data.atr.unknown.property"
+                    },
+                    "2": {
+                      "name": "keyword.operator.sus.colon"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "keyword.operator.sus.comma",
+          "match": ","
+        },
+        {
+          "name": "invalid.illegal.sus.data.til",
+          "match": "\\S"
+        }
+      ]
+    }
+  },
+  "scopeName": "source.sus"
+}

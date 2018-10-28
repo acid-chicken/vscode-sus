@@ -1,8 +1,8 @@
 {
   "name": "vscode-sus",
   "displayName": "vscode-sus",
-  "description": "",
-  "version": "1.0.0",
+  "description": "某スライドして手を跳ね上げる音ゲーシミュレーターの譜面マップハイライター",
+  "version": "1.0.1",
   "publisher": "acid-chicken",
   "license": "MIT",
   "repository": {
